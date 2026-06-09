@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>NewsFlash</title>
+
+<link rel="stylesheet"
+href="style.css">
+
+</head>
+
+<body>
+
+<div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+
+  <button
+  class="close-btn"
+  onclick="toggleSidebar()">
+
+    ✖
+
+  </button>
+
+</div>
+
+  <button onclick="randomNews()">
+    🎲 Random News
+  </button>
+
+  <button onclick="loadNews(currentCategory)">
+    🔄 Refresh
+  </button>
+
+  <button onclick="openBookmarks()">
+    ⭐ Saved News
+  </button>
+
+  <button onclick="toggleTheme()">
+    🌙 Dark Mode
+  </button>
+
+  <button onclick="logout()">
+    🚪 Logout
+  </button>
+
+</div>
+
+<div
+id="overlay"
+class="overlay"
+onclick="toggleSidebar()">
+</div>
+
+<div class="container">
+
+  <div class="header">
+
+<button
+class="menu-btn"
+onclick="toggleSidebar()">
+
+☰
+
+</button>
+
+<h1>NewsFlash</h1>
+
+  </div>
+
+  <div id="userInfo"></div>
+
+  <div class="search-box">
+
+<input
+id="searchInput"
+placeholder="Search News">
+
+<button onclick="searchNews()">
+  🔍 Search
+</button>
+
+  </div>
+
+  <div class="categories">
+
+<button onclick="loadNews('general')">
+   🇮🇳 National
+</button>
+
+<button onclick="loadNews('world')">
+  🌍 International
+</button>
+
+<button onclick="loadNews('sports')">
+  🏏 Sports
+</button>
+
+<button onclick="loadNews('technology')">
+  💻 Technology
+</button>
+
+<button onclick="loadNews('business')">
+  💰 Business
+</button>
+
+<button onclick="loadNews('science')">
+  🚀 Science
+</button>
+
+<button onclick="loadNews('health')">
+  ❤️ Health
+</button>
+
+  </div>
+
+  <div id="progressCounter">
+    Card 1 of 20
+  </div>
+
+  <div class="flashcard">
+
+</span>
+
+<div class="flip-card">
+
+  <div class="flip-card-inner" id="flipCard">
+
+    <div
+class="flip-card-front"
+onclick="flipCard()">
+
+      <span id="categoryTag">
+        🔥 Trending Current Affairs
+      </span>
+
+      <h2 id="title">
+        Loading News...
+      </h2>
+
+      <div id="newsDate"></div>
+
+      <p class="flip-hint">
+        Click to Flip
+        
+      </p>
+
+    </div>
+
+    <div
+    class="flip-card-back"
+    onclick="flipCard()">
+
+      <h3>Summary</h3>
+
+      <p id="description"></p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<a
+id="newsLink"
+target="_blank"
+class="read-btn">
+
+  Read Full News
+
+</a>
+
+<button
+id="bookmarkBtn"
+onclick="bookmarkNews()">
+
+  ⭐ Save Card
+
+</button>
+
+<div class="nav-buttons">
+
+  <button onclick="previousCard()">
+    ⬅ Previous
+  </button>
+
+  <button onclick="nextCard()">
+    Next ➡
+  </button>
+
+</div>
+
+  </div>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+<script src="firebase.js"></script>
+
+<script src="auth.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
