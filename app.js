@@ -37,8 +37,8 @@ async function loadNews(
   currentCategory =
   category;
 
-  const url =
-  `https://gnews.io/api/v4/top-headlines?category=${category}&lang=en&country=in&max=20&apikey=${API_KEY}`;
+const url =
+`/api/news?category=${category}`;
 
   try{
 
@@ -295,9 +295,9 @@ async function searchNews(){
 
   if(!query) return;
 
-  const url =
-  `https://gnews.io/api/v4/search?q=${query}&lang=en&country=in&max=20&apikey=${API_KEY}`;
-
+const url =
+`/api/news?search=${query}`;
+  
   try{
 
     const response =
