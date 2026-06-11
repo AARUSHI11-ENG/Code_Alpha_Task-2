@@ -378,3 +378,26 @@ function flipCard(){
   .toggle("flipped");
 
 }
+async function loadDrugCrimeNews(){
+
+  const response =
+  await fetch(
+  "/api/news?search=India narcotics OR NCB OR drug trafficking OR NDPS"
+  );
+
+  const data =
+  await response.json();
+
+  newsData =
+  data.articles || [];
+
+  currentIndex = 0;
+
+  document.getElementById(
+    "categoryTag"
+  ).innerHTML =
+  "💊 Narcotics Crime";
+
+  displayNews();
+
+}
