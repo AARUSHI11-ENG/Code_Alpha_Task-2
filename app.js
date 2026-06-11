@@ -382,7 +382,7 @@ async function loadDrugCrimeNews(){
 
   const response =
   await fetch(
-  "/api/news?search=India narcotics OR NCB OR drug trafficking OR NDPS"
+    "/api/news?search=narcotics India"
   );
 
   const data =
@@ -393,11 +393,5 @@ async function loadDrugCrimeNews(){
 
   currentIndex = 0;
 
-  document.getElementById(
-    "categoryTag"
-  ).innerHTML =
-  "💊 Narcotics Crime";
-
   displayNews();
-
 }
